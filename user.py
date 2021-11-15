@@ -6,7 +6,7 @@ client_socket.connect(('0.tcp.ngrok.io', 18585))
 connection = client_socket.makefile('wb')
 
 
-def recv():
+def receive():
     while True:
         data = client_socket.recv(4096).decode()
         if not data:
@@ -21,4 +21,4 @@ while True:
 
     counter += 1
     if counter == 1:
-        Thread(target=recv).start()
+        Thread(target=receive).start()

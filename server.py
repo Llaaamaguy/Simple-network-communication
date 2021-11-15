@@ -3,7 +3,7 @@ import socket
 HOST = ''
 PORT = 8485
 
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 print('Socket created')
 
 s.bind((HOST,PORT))
@@ -20,4 +20,4 @@ while True:
     else:
         print(str(data))
 
-    conn.send("Got packet {}".format(data).encode('utf-8'))
+    conn.send(f"Got packet {data}".encode('utf-8'))
